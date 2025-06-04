@@ -45,7 +45,7 @@ export const CONTACT_INFO = {
   };
   
   // Mensagens padrão para WhatsApp
-  export const WHATSAPP_MESSAGES = {
+  export const WHATSAPP_NUMBER = {
     cart: (items, total) => {
       let message = `🎉 *Orçamento - Ateliê Amanda Maia*\n\n`;
       message += `📋 *Produtos selecionados:*\n`;

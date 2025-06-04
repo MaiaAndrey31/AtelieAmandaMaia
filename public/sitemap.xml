@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Página Principal -->
+  <url>
+    <loc>https://atelie-amanda-maia.com/</loc>
+    <lastmod>2024-12-01T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://atelie-amanda-maia.com/logo512.png</image:loc>
+      <image:title>Ateliê Amanda Maia - Logo</image:title>
+      <image:caption>Logo oficial do Ateliê Amanda Maia</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Página de Produtos -->
+  <url>
+    <loc>https://atelie-amanda-maia.com/products</loc>
+    <lastmod>2024-12-01T10:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sobre Nós -->
+  <url>
+    <loc>https://atelie-amanda-maia.com/about</loc>
+    <lastmod>2024-11-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contato -->
+  <url>
+    <loc>https://atelie-amanda-maia.com/contact</loc>
+    <lastmod>2024-11-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Galeria -->
+  <url>
+    <loc>https://atelie-amanda-maia.com/gallery</loc>
+    <lastmod>2024-12-01T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Categorias de Produtos -->
+  <url>
+    <loc>https://atelie-amanda-maia.com/products?category=velas</loc>
+    <lastmod>2024-12-01T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/products?category=topos</loc>
+    <lastmod>2024-12-01T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/products?category=lembrancinhas</loc>
+    <lastmod>2024-12-01T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/products?category=familia</loc>
+    <lastmod>2024-12-01T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/products?category=funko</loc>
+    <lastmod>2024-12-01T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/products?category=chaveiros</loc>
+    <lastmod>2024-12-01T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Produtos Específicos (exemplos) -->
+  <url>
+    <loc>https://atelie-amanda-maia.com/product/vela-personalizada-simples</loc>
+    <lastmod>2024-11-20T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://atelie-amanda-maia.com/images/products/vela-personalizada.jpg</image:loc>
+      <image:title>Vela Personalizada Simples</image:title>
+      <image:caption>Vela personalizada com número da idade e textura única</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/product/topo-bolo-personalizado</loc>
+    <lastmod>2024-11-20T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://atelie-amanda-maia.com/images/products/topo-bolo.jpg</image:loc>
+      <image:title>Topo de Bolo Personalizado</image:title>
+      <image:caption>Topo de bolo personalizado para decoração de festa</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/product/lembrancinha-personalizada</loc>
+    <lastmod>2024-11-20T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://atelie-amanda-maia.com/images/products/lembrancinha.jpg</image:loc>
+      <image:title>Lembrancinha Personalizada</image:title>
+      <image:caption>Lembrancinha personalizada para festa infantil</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Páginas de apoio -->
+  <url>
+    <loc>https://atelie-amanda-maia.com/politica-privacidade</loc>
+    <lastmod>2024-10-01T10:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/termos-uso</loc>
+    <lastmod>2024-10-01T10:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/politica-entrega</loc>
+    <lastmod>2024-10-01T10:00:00+00:00</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://atelie-amanda-maia.com/formas-pagamento</loc>
+    <lastmod>2024-10-01T10:00:00+00:00</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>

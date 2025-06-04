@@ -1,13 +1,14 @@
 import React, { useState, useContext } from 'react';
-import { CartContext } from '../../contexts/CartContext';
+import { CartContext } from '../../contexts/CartContext.jsx';
 import { WHATSAPP_NUMBER, SOCIAL_LINKS } from '../../utils/constants';
+import Logo from '../../assets/images/products/logotipo.png';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { cartItems } = useContext(CartContext);
+  const { cartItems = [] } = useContext(CartContext);
   
-  const cartItemsCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const cartItemsCount = cartItems.reduce((total, item) => total + (item.quantity || 0), 0);
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('Olá! Gostaria de fazer um orçamento para produtos personalizados.');
@@ -27,7 +28,7 @@ const Header = () => {
       <div className="header-container">
         {/* Logo */}
         <div className="header-logo">
-          <img src="/assets/images/logo.png" alt="Ateliê Amanda Maia" />
+          <img src={Logo} alt="Ateliê Amanda Maia" />
           <span>Ateliê Amanda Maia</span>
         </div>
 

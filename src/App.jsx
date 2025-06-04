@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './contexts/CartContext';
-import { ThemeProvider } from './contexts/ThemeContext';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './contexts/CartContext.jsx';
+import { ThemeProvider } from './contexts/ThemeContext.jsx';
 
 // Components
 import Header from './components/Header/Header';
@@ -24,7 +24,12 @@ function App() {
   return (
     <ThemeProvider>
       <CartProvider>
-        <Router>
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <div className="App">
             <Header />
             <main className="main-content">
@@ -53,7 +58,7 @@ function App() {
               </a>
             </div>
           </div>
-        </Router>
+        </BrowserRouter>
       </CartProvider>
     </ThemeProvider>
   );

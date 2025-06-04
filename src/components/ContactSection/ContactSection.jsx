@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { validateEmail, validatePhone } from '../../utils/validators';
+import { isValidEmail as validateEmail, isValidPhone as validatePhone } from '../../utils/validators';
 import './ContactSection.css';
 
 const ContactSection = () => {
@@ -93,7 +93,7 @@ const ContactSection = () => {
       });
 
       alert('Mensagem enviada com sucesso! Você será redirecionado para o WhatsApp.');
-    } catch (error) {
+    } catch {
       alert('Erro ao enviar mensagem. Tente novamente.');
     } finally {
       setIsSubmitting(false);

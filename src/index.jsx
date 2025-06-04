@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App';
+import App from './App.jsx';
 import './index.css';
 
 // Error Boundary Component
@@ -10,18 +10,18 @@ class ErrorBoundary extends React.Component {
     this.state = { hasError: false, error: null, errorInfo: null };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
     this.setState({
-      error: error,
-      errorInfo: errorInfo
+      error,
+      errorInfo
     });
     
     // Log error to console in development
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.error('Error caught by ErrorBoundary:', error, errorInfo);
     }
   }
@@ -117,7 +117,7 @@ class ErrorBoundary extends React.Component {
               Reportar Erro
             </a>
           </div>
-          {process.env.NODE_ENV === 'development' && this.state.error && (
+          {import.meta.env.DEV && this.state.error && (
             <details style={{
               marginTop: '2rem',
               padding: '1rem',
@@ -151,7 +151,7 @@ class ErrorBoundary extends React.Component {
 }
 
 // Performance monitoring (development only)
-if (process.env.NODE_ENV === 'development') {
+if (import.meta.env.DEV) {
   // Log render performance
   const observer = new PerformanceObserver((list) => {
     list.getEntries().forEach((entry) => {
@@ -165,7 +165,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Register Service Worker for PWA (production only)
-if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
       .then((registration) => {
@@ -191,16 +191,20 @@ root.render(
 );
 
 // Web Vitals reporting (development only)
-if (process.env.NODE_ENV === 'development') {
-  const reportWebVitals = (onPerfEntry) => {
+if (import.meta.env.DEV) {
+  const reportWebVitals = async (onPerfEntry) => {
     if (onPerfEntry && onPerfEntry instanceof Function) {
-      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        getCLS(onPerfEntry);
-        getFID(onPerfEntry);
-        getFCP(onPerfEntry);
-        getLCP(onPerfEntry);
-        getTTFB(onPerfEntry);
-      });
+      try {
+        const webVitals = await import('web-vitals');
+        // Check if the functions exist before calling them
+        if (webVitals.onCLS) webVitals.onCLS(onPerfEntry);
+        if (webVitals.onFID) webVitals.onFID(onPerfEntry);
+        if (webVitals.onFCP) webVitals.onFCP(onPerfEntry);
+        if (webVitals.onLCP) webVitals.onLCP(onPerfEntry);
+        if (webVitals.onTTFB) webVitals.onTTFB(onPerfEntry);
+      } catch (error) {
+        console.error('Error loading web-vitals', error);
+      }
     }
   };
   

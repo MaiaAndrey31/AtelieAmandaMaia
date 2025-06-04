@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { CartContext } from '../../contexts/CartContext';
+import { CartContext } from '../../contexts/CartContext.jsx';
 import { formatPrice } from '../../utils/formatPrice';
 import { WHATSAPP_NUMBER } from '../../utils/constants';
 import './ProductCard.css';

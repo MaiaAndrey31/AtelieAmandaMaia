@@ -1,0 +1,50 @@
+{
+    "short_name": "Ateliê Amanda",
+    "name": "Ateliê Amanda Maia - Velas Personalizadas",
+    "description": "Velas personalizadas, topos de bolo, lembrancinhas e decorações únicas para sua festa",
+    "icons": [
+      {
+        "src": "vite.svg",
+        "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 512x512",
+        "type": "image/svg+xml"
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#FF6B9D",
+    "background_color": "#FFFFFF",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "pt-BR",
+    "categories": ["shopping", "lifestyle", "business"],
+    "screenshots": [
+      {
+        "src": "screenshot-wide.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Catálogo de produtos do Ateliê Amanda Maia"
+      },
+      {
+        "src": "screenshot-narrow.png",
+        "sizes": "750x1334",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Página inicial mobile do Ateliê Amanda Maia"
+      }
+    ],
+    "shortcuts": [
+      {
+        "name": "Produtos",
+        "short_name": "Produtos",
+        "description": "Ver catálogo de produtos",
+        "url": "/products"
+      },
+      {
+        "name": "Contato",
+        "short_name": "Contato",
+        "description": "Entre em contato conosco",
+        "url": "/contact"
+      }
+    ]
+  }

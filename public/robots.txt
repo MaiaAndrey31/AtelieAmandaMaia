@@ -1,0 +1,67 @@
+# Robots.txt para Ateliê Amanda Maia
+User-agent: *
+Allow: /
+
+# Páginas principais
+Allow: /
+Allow: /products
+Allow: /about
+Allow: /contact
+Allow: /gallery
+
+# Assets permitidos
+Allow: /static/
+Allow: /images/
+Allow: /assets/
+Allow: /logo*.png
+Allow: /favicon.ico
+Allow: /manifest.json
+
+# Bloquear arquivos de desenvolvimento
+Disallow: /build/
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /yarn.lock
+
+# Bloquear arquivos temporários
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /*.log
+Disallow: /*.bak
+Disallow: /*.backup
+
+# Permitir bots de redes sociais
+User-agent: facebookexternalhit/
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: PinterestBot
+Allow: /
+
+# Configurações específicas do Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /assets/
+Allow: /static/
+
+# Sitemap
+Sitemap: https://atelie-amanda-maia.com/sitemap.xml
+
+# Tempo de crawl (opcional)
+# Crawl-delay: 1

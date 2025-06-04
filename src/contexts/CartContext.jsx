@@ -1,9 +1,8 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
-
+import React, { createContext, useReducer, useEffect } from 'react';
 // Estados do carrinho
 const cartReducer = (state, action) => {
   switch (action.type) {
-    case 'ADD_TO_CART':
+    case 'ADD_TO_CART': {
       const existingItemIndex = state.items.findIndex(
         item => item.id === action.payload.id
       );
@@ -23,14 +22,16 @@ const cartReducer = (state, action) => {
           items: [...state.items, { ...action.payload, quantity: action.payload.quantity || 1 }]
         };
       }
+    }
 
-    case 'REMOVE_FROM_CART':
+    case 'REMOVE_FROM_CART': {
       return {
         ...state,
         items: state.items.filter(item => item.id !== action.payload.id)
       };
+    }
 
-    case 'UPDATE_QUANTITY':
+    case 'UPDATE_QUANTITY': {
       if (action.payload.quantity <= 0) {
         return {
           ...state,
@@ -46,18 +47,23 @@ const cartReducer = (state, action) => {
             : item
         )
       };
+    }
 
-    case 'CLEAR_CART':
+    case 'CLEAR_CART': {
       return { ...state, items: [] };
+    }
 
-    case 'TOGGLE_CART':
+    case 'TOGGLE_CART': {
       return { ...state, isOpen: !state.isOpen };
+    }
 
-    case 'SET_CART_OPEN':
+    case 'SET_CART_OPEN': {
       return { ...state, isOpen: action.payload };
+    }
 
-    case 'LOAD_CART':
+    case 'LOAD_CART': {
       return { ...state, items: action.payload || [] };
+    }
 
     default:
       return state;
@@ -73,17 +79,8 @@ const initialState = {
 // Criação do contexto
 const CartContext = createContext();
 
-// Hook personalizado para usar o contexto do carrinho
-export const useCart = () => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error('useCart must be used within a CartProvider');
-  }
-  return context;
-};
-
 // Provider do contexto do carrinho
-export const CartProvider = ({ children }) => {
+const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   // Carrega o carrinho do localStorage na inicialização
@@ -256,3 +253,6 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
+// Exportar o contexto e o provider
+export { CartContext, CartProvider };
