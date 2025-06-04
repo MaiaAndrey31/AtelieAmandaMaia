@@ -1,0 +1,270 @@
+:root {
+    /* Cores Principais */
+    --primary-color: #FF6B9D;
+    --primary-hover: #FF4785;
+    --primary-light: #FFB8D1;
+    --primary-dark: #E55A8A;
+    
+    --secondary-color: #8B5FBF;
+    --secondary-hover: #7A52A8;
+    --secondary-light: #B69AE0;
+    --secondary-dark: #6B4A8F;
+    
+    --accent-color: #A8E6CF;
+    --accent-hover: #8FD9B5;
+    --accent-light: #D4F4E3;
+    --accent-dark: #7DCCA4;
+    
+    --gold-color: #FFD700;
+    --gold-hover: #F0C814;
+    --gold-light: #FFF3A0;
+    --gold-dark: #E6C200;
+  
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, #FF6B9D, #FF8E9B);
+    --gradient-secondary: linear-gradient(135deg, #8B5FBF, #A569BD);
+    --gradient-accent: linear-gradient(135deg, #A8E6CF, #8FD9B5);
+    --gradient-hero: linear-gradient(135deg, #FF6B9D, #8B5FBF);
+    --gradient-card: linear-gradient(145deg, #FFFFFF, #F8F9FA);
+    --gradient-overlay: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
+  
+    /* Cores de Fundo */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --bg-tertiary: #F1F3F4;
+    --bg-accent: #FAFBFC;
+    --bg-overlay: rgba(255, 255, 255, 0.9);
+    --bg-modal: rgba(0, 0, 0, 0.5);
+  
+    /* Cores de Texto */
+    --text-primary: #1A202C;
+    --text-secondary: #4A5568;
+    --text-muted: #718096;
+    --text-light: #A0AEC0;
+    --text-white: #FFFFFF;
+    --text-on-primary: #FFFFFF;
+  
+    /* Cores de Estado */
+    --success-color: #48BB78;
+    --success-light: #C6F6D5;
+    --success-dark: #38A169;
+    
+    --warning-color: #ED8936;
+    --warning-light: #FEEBC8;
+    --warning-dark: #DD6B20;
+    
+    --error-color: #F56565;
+    --error-light: #FED7D7;
+    --error-dark: #E53E3E;
+    
+    --info-color: #4299E1;
+    --info-light: #BEE3F8;
+    --info-dark: #3182CE;
+  
+    /* Bordas */
+    --border-color: #E2E8F0;
+    --border-light: #F7FAFC;
+    --border-dark: #CBD5E0;
+    --border-primary: #FF6B9D;
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-full: 9999px;
+  
+    /* Sombras */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-primary: 0 4px 14px 0 rgba(255, 107, 157, 0.25);
+    --shadow-secondary: 0 4px 14px 0 rgba(139, 95, 191, 0.25);
+  
+    /* Tipografia */
+    --font-family-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family-secondary: 'Poppins', 'Inter', sans-serif;
+    --font-family-mono: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+  
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+  
+    --line-height-tight: 1.25;
+    --line-height-snug: 1.375;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --line-height-loose: 2;
+  
+    --letter-spacing-tighter: -0.05em;
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
+  
+    /* Espaçamento */
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    --space-40: 10rem;
+    --space-48: 12rem;
+    --space-56: 14rem;
+    --space-64: 16rem;
+  
+    /* Breakpoints */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+  
+    /* Z-Index */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal-backdrop: 1040;
+    --z-index-modal: 1050;
+    --z-index-popover: 1060;
+    --z-index-tooltip: 1070;
+    --z-index-toast: 1080;
+  
+    /* Transições */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.2s ease;
+    --transition-slow: 0.3s ease;
+    --transition-slower: 0.6s ease;
+  
+    --transition-all: all 0.2s ease;
+    --transition-colors: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    --transition-opacity: opacity 0.2s ease;
+    --transition-shadow: box-shadow 0.2s ease;
+    --transition-transform: transform 0.2s ease;
+  
+    /* Opacidades */
+    --opacity-0: 0;
+    --opacity-25: 0.25;
+    --opacity-50: 0.5;
+    --opacity-75: 0.75;
+    --opacity-100: 1;
+  
+    /* Larguras Máximas */
+    --max-width-xs: 20rem;
+    --max-width-sm: 24rem;
+    --max-width-md: 28rem;
+    --max-width-lg: 32rem;
+    --max-width-xl: 36rem;
+    --max-width-2xl: 42rem;
+    --max-width-3xl: 48rem;
+    --max-width-4xl: 56rem;
+    --max-width-5xl: 64rem;
+    --max-width-6xl: 72rem;
+    --max-width-7xl: 80rem;
+    --max-width-full: 100%;
+    --max-width-screen-sm: 640px;
+    --max-width-screen-md: 768px;
+    --max-width-screen-lg: 1024px;
+    --max-width-screen-xl: 1280px;
+  
+    /* Altura da Navbar */
+    --navbar-height: 70px;
+    --navbar-height-mobile: 60px;
+  
+    /* Tamanhos de Ícones */
+    --icon-xs: 12px;
+    --icon-sm: 16px;
+    --icon-md: 20px;
+    --icon-lg: 24px;
+    --icon-xl: 32px;
+    --icon-2xl: 48px;
+  
+    /* Específico do Projeto */
+    --whatsapp-color: #25D366;
+    --instagram-color: #E4405F;
+    --facebook-color: #1877F2;
+    
+    --product-card-width: 280px;
+    --product-card-height: 360px;
+    
+    --hero-height: 80vh;
+    --hero-height-mobile: 60vh;
+    
+    --footer-height: 200px;
+  }
+  
+  /* Tema Escuro (Dark Mode) */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-primary: #1A202C;
+      --bg-secondary: #2D3748;
+      --bg-tertiary: #4A5568;
+      --bg-accent: #2D3748;
+      --bg-overlay: rgba(26, 32, 44, 0.9);
+      
+      --text-primary: #F7FAFC;
+      --text-secondary: #E2E8F0;
+      --text-muted: #CBD5E0;
+      --text-light: #A0AEC0;
+      
+      --border-color: #4A5568;
+      --border-light: #2D3748;
+      --border-dark: #718096;
+      
+      --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  /* Media Queries para Variáveis Responsivas */
+  @media (max-width: 768px) {
+    :root {
+      --font-size-xs: 0.7rem;
+      --font-size-sm: 0.8rem;
+      --font-size-base: 0.9rem;
+      --font-size-lg: 1rem;
+      --font-size-xl: 1.125rem;
+      --font-size-2xl: 1.25rem;
+      --font-size-3xl: 1.5rem;
+      --font-size-4xl: 1.875rem;
+      --font-size-5xl: 2.25rem;
+      
+      --space-16: 3rem;
+      --space-20: 4rem;
+      --space-24: 5rem;
+      --space-32: 6rem;
+      
+      --navbar-height: var(--navbar-height-mobile);
+      --hero-height: var(--hero-height-mobile);
+      
+      --product-card-width: 260px;
+      --product-card-height: 340px;
+    }
+  }

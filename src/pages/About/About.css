@@ -1,0 +1,366 @@
+/* About Page Styles */
+.about-page {
+    min-height: 100vh;
+  }
+  
+  /* Hero Section */
+  .about-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/pattern-overlay.png') repeat;
+    opacity: 0.1;
+  }
+  
+  .about-hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .about-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Nossa História */
+  .our-story {
+    padding: 100px 0;
+    background: var(--light-gray);
+  }
+  
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  
+  .story-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .story-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .story-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .story-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .stat:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Nossos Valores */
+  .our-values {
+    padding: 100px 0;
+    background: white;
+  }
+  
+  .our-values h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 4rem;
+    font-weight: 600;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .value-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+  }
+  
+  .value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+  
+  .value-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  
+  .value-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .value-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  /* Processo de Trabalho */
+  .work-process {
+    padding: 100px 0;
+    background: var(--light-gray);
+  }
+  
+  .work-process h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 4rem;
+    font-weight: 600;
+  }
+  
+  .process-steps {
+    display: grid;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .process-step:hover {
+    transform: translateX(10px);
+  }
+  
+  .step-number {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step-content h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .step-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Depoimentos */
+  .testimonials-section {
+    padding: 100px 0;
+    background: white;
+  }
+  
+  .testimonials-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 4rem;
+    font-weight: 600;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  .testimonial-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .testimonial-stars {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  
+  .testimonial-author strong {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .testimonial-author span {
+    display: block;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+  
+  /* Call to Action */
+  .about-cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+  }
+  
+  .cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .whatsapp-icon {
+    margin-right: 0.5rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+    
+    .story-stats {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .process-step {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+    
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .cta-buttons .btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
