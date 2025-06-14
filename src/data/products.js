@@ -10,7 +10,7 @@ export const products = [
       features: ["Nome incluso", "Detalhes únicos", "Cera de qualidade"],
       isPopular: true,
       customizable: true,
-      productionTime: 3
+      productionTime: 7
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export const products = [
       features: ["Dois números", "Nome incluso", "Cores personalizadas"],
       isPopular: false,
       customizable: true,
-      productionTime: 3
+      productionTime: 7
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ export const products = [
       features: ["Tema personalizado", "Decorações únicas", "Embalagem especial"],
       isPopular: true,
       customizable: true,
-      productionTime: 5
+      productionTime: 7
     },
   
     // Topos de Bolo
@@ -48,7 +48,7 @@ export const products = [
       features: ["Papel especial", "Haste inclusa", "Personalização gratuita"],
       isPopular: true,
       customizable: true,
-      productionTime: 2
+      productionTime: 7
     },
     {
       id: 5,
@@ -60,7 +60,7 @@ export const products = [
       features: ["Tema personalizado", "Múltiplas cores", "Design exclusivo"],
       isPopular: true,
       customizable: true,
-      productionTime: 3
+      productionTime: 7
     },
     {
       id: 6,
@@ -72,7 +72,7 @@ export const products = [
       features: ["Acabamento premium", "Brilhos especiais", "Embalagem de luxo"],
       isPopular: false,
       customizable: true,
-      productionTime: 4
+      productionTime: 7
     },
   
     // Lembrancinhas
@@ -86,7 +86,7 @@ export const products = [
       features: ["10 unidades", "Personalização inclusa", "Embalagem individual"],
       isPopular: true,
       customizable: true,
-      productionTime: 5
+      productionTime: 7
     },
     {
       id: 8,
@@ -110,7 +110,7 @@ export const products = [
       features: ["50 unidades", "Melhor custo-benefício", "Frete grátis"],
       isPopular: false,
       customizable: true,
-      productionTime: 10
+      productionTime: 15
     },
   
     // Família Personalizada
@@ -124,7 +124,7 @@ export const products = [
       features: ["3 personagens", "Detalhes únicos", "Base inclusa"],
       isPopular: true,
       customizable: true,
-      productionTime: 7
+      productionTime: 15
     },
     {
       id: 11,
@@ -136,7 +136,7 @@ export const products = [
       features: ["4 personagens", "Roupas personalizadas", "Pets opcionais"],
       isPopular: true,
       customizable: true,
-      productionTime: 8
+      productionTime: 15
     },
     {
       id: 12,
@@ -148,7 +148,7 @@ export const products = [
       features: ["5+ personagens", "Desconto adicional", "Embalagem especial"],
       isPopular: false,
       customizable: true,
-      productionTime: 10
+      productionTime: 15
     },
   
     // Funko Pop
@@ -186,7 +186,7 @@ export const products = [
       features: ["3 Funkos", "Desconto família", "Caixas individuais"],
       isPopular: false,
       customizable: true,
-      productionTime: 15
+      productionTime: 20
     },
   
     // Chaveiros
@@ -200,7 +200,7 @@ export const products = [
       features: ["Material resistente", "Personalização gratuita", "Argola inclusa"],
       isPopular: true,
       customizable: true,
-      productionTime: 3
+      productionTime: 10
     },
     {
       id: 17,
@@ -212,7 +212,7 @@ export const products = [
       features: ["5 unidades", "Desconto por quantidade", "Temas variados"],
       isPopular: true,
       customizable: true,
-      productionTime: 4
+      productionTime: 15
     },
     {
       id: 18,
@@ -224,7 +224,7 @@ export const products = [
       features: ["10 unidades", "Melhor preço", "Embalagem individual"],
       isPopular: false,
       customizable: true,
-      productionTime: 5
+      productionTime: 15
     }
   ];
   

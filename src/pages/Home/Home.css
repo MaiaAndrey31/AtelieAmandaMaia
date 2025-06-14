@@ -151,16 +151,19 @@
   
   .section-header h2 {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--gold-hover);
     margin-bottom: 1rem;
     font-weight: 700;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   }
   
   .section-header p {
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    color: var(--text-color);
     max-width: 600px;
     margin: 0 auto;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+
   }
   
   .loading-container,

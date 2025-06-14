@@ -8,15 +8,17 @@
   }
   
   .category-filter-header h3 {
-    color: var(--text-dark);
+    color: var(--gold-hover);
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   }
   
   .category-filter-header p {
-    color: var(--text-light);
+    color: var(--text-color);
     font-size: 1.1rem;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   }
   
   /* Desktop Filter Grid */
