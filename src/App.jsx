@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext.jsx';
 import { ThemeProvider } from './contexts/ThemeContext.jsx';
 
@@ -7,12 +7,8 @@ import { ThemeProvider } from './contexts/ThemeContext.jsx';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-// Pages
-import Home from './pages/Home/Home';
-import Products from './pages/Products/Products';
-import About from './pages/About/About';
-import Contact from './pages/Contact/Contact';
-import Gallery from './pages/Gallery/Gallery';
+// Routes
+import AppRoutes from './routes';
 
 // Styles
 import './App.css';
@@ -33,13 +29,7 @@ function App() {
           <div className="App">
             <Header />
             <main className="main-content">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/produtos" element={<Products />} />
-                <Route path="/sobre" element={<About />} />
-                <Route path="/contato" element={<Contact />} />
-                <Route path="/galeria" element={<Gallery />} />
-              </Routes>
+              <AppRoutes />
             </main>
             <Footer />
             

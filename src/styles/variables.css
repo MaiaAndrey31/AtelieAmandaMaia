@@ -25,7 +25,7 @@
     --gradient-secondary: linear-gradient(135deg, #8B5FBF, #A569BD);
     --gradient-accent: linear-gradient(135deg, #A8E6CF, #8FD9B5);
     --gradient-hero: linear-gradient(135deg, #FF6B9D, #8B5FBF);
-    --gradient-card: linear-gradient(145deg, #FFFFFF, #F8F9FA);
+    --gradient-card: linear-gradient(145deg, #161616, #2a94ff);
     --gradient-overlay: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
   
     /* Cores de Fundo */

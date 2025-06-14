@@ -1,33 +1,47 @@
 import React, { useState, useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext.jsx';
 import { WHATSAPP_NUMBER, SOCIAL_LINKS } from '../../utils/constants';
 import Logo from '../../assets/images/products/logotipo.png';
+import { InstagramLogoIcon, FacebookLogoIcon, ShoppingCartIcon } from '@phosphor-icons/react';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
   const { cartItems = [] } = useContext(CartContext);
-  
+
   const cartItemsCount = cartItems.reduce((total, item) => total + (item.quantity || 0), 0);
+
+  const handleNavigation = (path) => {
+    // Se já estiver na mesma página, rola para o topo
+    if (location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate(path);
+    }
+    setIsMenuOpen(false);
+  };
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('Olá! Gostaria de fazer um orçamento para produtos personalizados.');
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
   };
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
+  // Função para rolar para o topo da página
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <header className="header">
       <div className="header-container">
         {/* Logo */}
-        <div className="header-logo">
+        <div className="header-logo" onClick={() => {
+          handleNavigation('/');
+          scrollToTop();
+        }}>
           <img src={Logo} alt="Ateliê Amanda Maia" />
           <span>Ateliê Amanda Maia</span>
         </div>
@@ -35,11 +49,11 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="header-nav desktop-nav">
           <ul>
-            <li><button onClick={() => scrollToSection('home')}>Home</button></li>
-            <li><button onClick={() => scrollToSection('products')}>Produtos</button></li>
-            <li><button onClick={() => scrollToSection('gallery')}>Galeria</button></li>
-            <li><button onClick={() => scrollToSection('about')}>Sobre</button></li>
-            <li><button onClick={() => scrollToSection('contact')}>Contato</button></li>
+            <li><button onClick={() => handleNavigation('/')}>Home</button></li>
+            <li><button onClick={() => handleNavigation('/produtos')}>Produtos</button></li>
+            <li><button onClick={() => handleNavigation('/galeria')}>Galeria</button></li>
+            <li><button onClick={() => handleNavigation('/sobre')}>Sobre</button></li>
+            <li><button onClick={() => handleNavigation('/contato')}>Contato</button></li>
           </ul>
         </nav>
 
@@ -47,27 +61,34 @@ const Header = () => {
         <div className="header-actions">
           {/* Social Links */}
           <div className="social-links">
-            <a 
-              href={SOCIAL_LINKS.instagram} 
-              target="_blank" 
+            <a
+              href={SOCIAL_LINKS.instagram}
+              target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <i className="fab fa-instagram"></i>
+              <InstagramLogoIcon size={24} color="white" />
             </a>
-            <a 
-              href={SOCIAL_LINKS.facebook} 
-              target="_blank" 
+            <a
+              href={SOCIAL_LINKS.facebook}
+              target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <i className="fab fa-facebook"></i>
+              <FacebookLogoIcon size={24} color="white" />
             </a>
           </div>
 
           {/* Cart Button */}
-          <button className="cart-button" onClick={() => scrollToSection('cart')}>
-            <i className="fas fa-shopping-cart"></i>
+          <button
+            className="cart-button"
+            onClick={() => {
+              handleNavigation('/carrinho');
+              setIsMenuOpen(false);
+            }}
+          >
+            <ShoppingCartIcon size={24} color="white" />
+
             {cartItemsCount > 0 && (
               <span className="cart-badge">{cartItemsCount}</span>
             )}
@@ -80,7 +101,7 @@ const Header = () => {
           </button>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="mobile-menu-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Menu"
@@ -95,18 +116,18 @@ const Header = () => {
       {/* Mobile Navigation */}
       <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
         <ul>
-          <li><button onClick={() => scrollToSection('home')}>Home</button></li>
-          <li><button onClick={() => scrollToSection('products')}>Produtos</button></li>
-          <li><button onClick={() => scrollToSection('gallery')}>Galeria</button></li>
-          <li><button onClick={() => scrollToSection('about')}>Sobre</button></li>
-          <li><button onClick={() => scrollToSection('contact')}>Contato</button></li>
+          <li><button onClick={() => handleNavigation('/')}>Home</button></li>
+          <li><button onClick={() => handleNavigation('/produtos')}>Produtos</button></li>
+          <li><button onClick={() => handleNavigation('/galeria')}>Galeria</button></li>
+          <li><button onClick={() => handleNavigation('/sobre')}>Sobre</button></li>
+          <li><button onClick={() => handleNavigation('/contato')}>Contato</button></li>
         </ul>
       </nav>
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div 
-          className="mobile-menu-overlay" 
+        <div
+          className="mobile-menu-overlay"
           onClick={() => setIsMenuOpen(false)}
         ></div>
       )}

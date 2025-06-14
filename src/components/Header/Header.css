@@ -1,5 +1,5 @@
 .header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
     box-shadow: 0 2px 20px rgba(255, 107, 157, 0.2);
     position: fixed;
     top: 0;
@@ -21,16 +21,16 @@
   /* Logo */
   .header-logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    color: white;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   
   .header-logo img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -39,7 +39,7 @@
   .desktop-nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
     margin: 0;
     padding: 0;
   }
@@ -90,7 +90,6 @@
   }
   
   .social-links a {
-    color: rgb(10, 2, 2);
     font-size: 1.25rem;
     padding: 0.5rem;
     border-radius: 50%;

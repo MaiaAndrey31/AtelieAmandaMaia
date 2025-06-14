@@ -5,6 +5,8 @@ import ProductGrid from '../../components/ProductGrid/ProductGrid';
 import ContactSection from '../../components/ContactSection/ContactSection';
 import { useProducts } from '../../hooks/useProducts';
 import { testimonials } from '../../data/testimonials';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 import './Home.css';
 
 const Home = () => {
@@ -27,11 +29,16 @@ const Home = () => {
   const featuredProducts = products.filter(product => product.isPopular).slice(0, 8);
 
   const stats = [
-    { number: '500+', label: 'Clientes Felizes', icon: '😊' },
-    { number: '1000+', label: 'Produtos Criados', icon: '🎨' },
-    { number: '3', label: 'Anos de Experiência', icon: '⭐' },
-    { number: '100%', label: 'Personalizado', icon: '✨' }
+    { number: 500, suffix: '+', label: 'Clientes Felizes', icon: '😊' },
+    { number: 1000, suffix: '+', label: 'Produtos Criados', icon: '🎨' },
+    { number: 12, suffix: '', label: 'Anos de Experiência', icon: '⭐' },
+    { number: 100, suffix: '%', label: 'Personalizado', icon: '✨' }
   ];
+
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  });
 
   return (
     <div className="home-page">
@@ -41,11 +48,22 @@ const Home = () => {
       {/* Stats Section */}
       <section className="stats-section">
         <div className="container">
-          <div className="stats-grid">
+          <div className="stats-grid" ref={ref}>
             {stats.map((stat, index) => (
               <div key={index} className="stat-card">
                 <div className="stat-icon">{stat.icon}</div>
-                <div className="stat-number">{stat.number}</div>
+                <div className="stat-number">
+                  {inView && (
+                    <CountUp
+                      end={stat.number}
+                      duration={2.5}
+                      separator="."
+                      decimals={0}
+                      useEasing={true}
+                    />
+                  )}
+                  {stat.suffix}
+                </div>
                 <div className="stat-label">{stat.label}</div>
               </div>
             ))}
@@ -60,7 +78,7 @@ const Home = () => {
             <div className="about-text">
               <h2>Sobre o Ateliê Amanda Maia</h2>
               <p>
-                Com mais de 3 anos de experiência, nosso ateliê se dedica a criar 
+                Com mais de 12 anos de experiência, nosso ateliê se dedica a criar 
                 produtos únicos e personalizados para tornar sua festa ainda mais especial. 
                 Cada peça é cuidadosamente desenvolvida com amor e atenção aos detalhes.
               </p>
