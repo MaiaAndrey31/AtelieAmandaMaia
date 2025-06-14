@@ -6,6 +6,7 @@ import ContactSection from '../../components/ContactSection/ContactSection';
 import { useProducts } from '../../hooks/useProducts';
 import { testimonials } from '../../data/testimonials';
 import CountUp from 'react-countup';
+import Atelie from '../../assets/images/atelie.jpg'
 import { useInView } from 'react-intersection-observer';
 import './Home.css';
 
@@ -103,9 +104,13 @@ const Home = () => {
               </div>
             </div>
             <div className="about-image">
-              <div className="image-placeholder">
-                <span className="placeholder-icon">🎭</span>
-                <p>Foto do Ateliê</p>
+              <div className="image-container">
+                <img 
+                  src={Atelie} 
+                  alt="Ateliê Amanda Maia" 
+                  className="about-image-content"
+                  
+                />
               </div>
             </div>
           </div>

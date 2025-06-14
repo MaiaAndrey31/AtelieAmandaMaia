@@ -27,21 +27,6 @@ const CategoryFilter = ({
 
       {/* Desktop Filter */}
       <div className="category-grid desktop-filter">
-        <button
-          className={`category-item ${selectedCategory === 'all' ? 'active' : ''}`}
-          onClick={() => handleCategoryClick('all')}
-        >
-          <div className="category-icon">🎉</div>
-          <div className="category-info">
-            <span className="category-name">Todas as Categorias</span>
-            {showCounts && (
-              <span className="category-count">
-                {Object.values(productCounts).reduce((sum, count) => sum + count, 0)} produtos
-              </span>
-            )}
-          </div>
-        </button>
-
         {categories.map((category) => (
           <button
             key={category.id}
@@ -52,11 +37,6 @@ const CategoryFilter = ({
             <div className="category-icon">{category.icon}</div>
             <div className="category-info">
               <span className="category-name">{category.name}</span>
-              {showCounts && (
-                <span className="category-count">
-                  {productCounts[category.id] || 0} produtos
-                </span>
-              )}
             </div>
             <div className="category-hover-effect"></div>
           </button>
@@ -111,28 +91,6 @@ const CategoryFilter = ({
               </button>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* Filter Tags */}
-      <div className="filter-tags">
-        <div className="tags-container">
-          <button
-            className={`filter-tag ${selectedCategory === 'all' ? 'active' : ''}`}
-            onClick={() => handleCategoryClick('all')}
-          >
-            Todos
-          </button>
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className={`filter-tag ${selectedCategory === category.id ? 'active' : ''}`}
-              onClick={() => handleCategoryClick(category.id)}
-              style={{ '--tag-color': category.color }}
-            >
-              {category.icon} {category.name}
-            </button>
-          ))}
         </div>
       </div>
     </div>

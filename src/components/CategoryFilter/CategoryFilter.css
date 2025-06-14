@@ -28,7 +28,7 @@
   }
   
   .category-item {
-    background: white;
+    background: linear-gradient(145deg, #161616, #2a94ff);;
     border: 2px solid var(--border-light);
     border-radius: 20px;
     padding: 1.5rem;
@@ -51,8 +51,8 @@
   .category-item.active {
     border-color: var(--category-color, var(--primary-color));
     background: linear-gradient(135deg, 
-      rgba(255, 107, 157, 0.05), 
-      rgba(139, 95, 191, 0.05)
+      rgba(11, 253, 132, 0.5), 
+      rgba(29, 247, 255, 0.5)
     );
     transform: translateY(-3px);
   }

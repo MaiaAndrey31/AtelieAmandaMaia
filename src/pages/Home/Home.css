@@ -52,7 +52,7 @@
   /* About Preview Section */
   .about-preview {
     padding: 2rem 1rem;
-    background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+    background: linear-gradient(145deg, #161616, #2a94ff);
   }
   
   .about-content {
@@ -64,9 +64,10 @@
   
   .about-text h2 {
     font-size: 2rem;
-    color: var(--gold-dark);
+    color: var(--primary-hover);
     margin-bottom: 1.5rem;
     font-weight: 700;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
   }
   
   .about-text p {
@@ -88,7 +89,7 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background:linear-gradient(145deg, #161616, #2a94ff);;
+    background:linear-gradient(145deg, var(--primary-dark), var(--secondary-dark));;
     border-radius: 15px;
     border: 1px solid rgba(255, 107, 157, 0.8);
     transition: all 0.3s ease;
@@ -108,34 +109,39 @@
   }
   
   .about-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 60%;
+    height: auto;
+    position: relative;
+    border-radius: 50px;
+    background: transparent;
+    overflow: visible;
   }
   
-  .image-placeholder {
-    width: 400px;
-    height: 300px;
-    background: linear-gradient(135deg, #FF6B9D, #8B5FBF);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+  .image-container {
+    position: relative;
+    width: 100%;    
+    min-height: 400px;
+    overflow: visible;
   }
   
-  .placeholder-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+  .about-image-content {
+    width: auto;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 80px;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
   }
+ 
   
   /* Featured Products Section */
   .featured-products {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
   }
   
   .section-header {

@@ -1,6 +1,6 @@
 export const categories = [
     {
-      id: "todos",
+      id: "all",
       name: "Todos os Produtos",
       icon: "🎨",
       color: "#FF6B9D",
