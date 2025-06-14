@@ -52,7 +52,7 @@ export const testimonials = [
     {
       id: 6,
       name: "Roberto Souza",
-      rating: 4,
+      rating: 5,
       comment: "Chaveiros de ótima qualidade! Entrega rápida e bem embalados. Vou comprar mais para dar de presente.",
       product: "Kit Chaveiros",
       date: "2023-12-10",

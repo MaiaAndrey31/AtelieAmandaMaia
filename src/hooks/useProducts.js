@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
 import { products } from '../data/products';
-import { categories } from '../data/categories';
 
 export function useProducts() {
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -94,30 +93,20 @@ export function useProducts() {
   };
 
   return {
-    // Estados
     products: filteredProducts,
-    allProducts: products,
-    categories,
+    loading: isLoading,
+    error: null,
     selectedCategory,
+    setSelectedCategory, 
     searchTerm,
-    sortBy,
-    isLoading,
-    
-    // Setters
-    setSelectedCategory,
     setSearchTerm,
+    sortBy,
     setSortBy,
-    
-    // Funções utilitárias
     getProductById,
     getPopularProducts,
     getProductsByCategory,
     getRelatedProducts,
-    
-    // Estatísticas
-    totalProducts: products.length,
-    filteredCount: filteredProducts.length,
-    categoriesCount: categories.length
+    getFeaturedProducts: () => products.filter(p => p.isFeatured).slice(0, 6)
   };
 }
 

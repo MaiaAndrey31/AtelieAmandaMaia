@@ -76,7 +76,7 @@ export const categories = [
     return categories.filter(category => category.featured);
   };
   
-  // Função para obter todas as categorias exceto "todos"
+  // Função para obter todas as categorias exceto "all"
   export const getProductCategories = () => {
-    return categories.filter(category => category.id !== "todos");
+    return categories.filter(category => category.id !== "all");
   };

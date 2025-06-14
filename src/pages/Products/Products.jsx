@@ -1,56 +1,56 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import CategoryFilter from '../../components/CategoryFilter/CategoryFilter';
 import ProductGrid from '../../components/ProductGrid/ProductGrid';
 import { useProducts } from '../../hooks/useProducts';
 import './Products.css';
 
 const Products = () => {
-  const { products, loading, error } = useProducts();
-  const [selectedCategory, setSelectedCategory] = useState('todos');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('name');
   const [searchTerm, setSearchTerm] = useState('');
   const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 });
   const [showFilters, setShowFilters] = useState(false);
+  
+  // Usar o hook useProducts com os filtros atuais
+  const { 
+    products, 
+    loading, 
+    error, 
+    setSelectedCategory: setCategory,
+    setSearchTerm: setSearch,
+    setSortBy: setSort
+  } = useProducts();
+  
+  // Atualizar a categoria no hook useProducts quando ela mudar
+  React.useEffect(() => {
+    setCategory(selectedCategory);
+  }, [selectedCategory, setCategory]);
+  
+  // Atualizar a busca no hook useProducts quando ela mudar
+  React.useEffect(() => {
+    setSearch(searchTerm);
+  }, [searchTerm, setSearch]);
+  
+  // Atualizar a ordenação no hook useProducts quando ela mudar
+  React.useEffect(() => {
+    setSort(sortBy);
+  }, [sortBy, setSort]);
 
-  // Filtrar e ordenar produtos
-  const filteredProducts = products
-    .filter(product => {
-      // Filtro por categoria
-      if (selectedCategory !== 'todos' && product.category !== selectedCategory) {
-        return false;
-      }
-      
-      // Filtro por busca
-      if (searchTerm && !product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-          !product.description.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return false;
-      }
-      
-      // Filtro por preço
-      if (product.price < priceRange.min || product.price > priceRange.max) {
-        return false;
-      }
-      
-      return true;
-    })
-    .sort((a, b) => {
-      switch (sortBy) {
-        case 'price-low':
-          return a.price - b.price;
-        case 'price-high':
-          return b.price - a.price;
-        case 'popular':
-          return b.isPopular - a.isPopular;
-        case 'name':
-        default:
-          return a.name.localeCompare(b.name);
-      }
-    });
+  // A filtragem e ordenação já são feitas no hook useProducts
+  // Apenas aplicamos o filtro de preço aqui
+  const filteredProducts = useMemo(() => {
+    return products.filter(product => 
+      product.price >= priceRange.min && product.price <= priceRange.max
+    );
+  }, [products, priceRange]);
+  
+  // Usamos diretamente os produtos filtrados, pois a ordenação já foi aplicada no hook
+  const sortedProducts = filteredProducts;
 
   // Estatísticas dos produtos
   const productStats = {
     total: products.length,
-    filtered: filteredProducts.length,
+    filtered: sortedProducts.length,
     categories: [...new Set(products.map(p => p.category))].length,
     priceRange: {
       min: Math.min(...products.map(p => p.price)),
@@ -58,9 +58,9 @@ const Products = () => {
     }
   };
 
-  // Reset filtros
+  // Resetar filtros
   const resetFilters = () => {
-    setSelectedCategory('todos');
+    setSelectedCategory('all');
     setSortBy('name');
     setSearchTerm('');
     setPriceRange({ min: 0, max: 1000 });
@@ -199,15 +199,15 @@ const Products = () => {
         />
 
         {/* Results Info */}
-        {(searchTerm || selectedCategory !== 'todos' || priceRange.min > 0 || priceRange.max < 1000) && (
+        {(searchTerm || selectedCategory !== 'all' || priceRange.min > 0 || priceRange.max < 1000) && (
           <div className="results-info">
             <p>
-              {filteredProducts.length === 0 
+              {sortedProducts.length === 0 
                 ? 'Nenhum produto encontrado com os filtros aplicados'
-                : `${filteredProducts.length} produto${filteredProducts.length > 1 ? 's' : ''} encontrado${filteredProducts.length > 1 ? 's' : ''}`
+                : `${sortedProducts.length} produto${sortedProducts.length > 1 ? 's' : ''} encontrado${sortedProducts.length > 1 ? 's' : ''}`
               }
             </p>
-            {filteredProducts.length === 0 && (
+            {sortedProducts.length === 0 && (
               <div className="no-results-suggestions">
                 <h3>Dicas para encontrar produtos:</h3>
                 <ul>
@@ -225,9 +225,9 @@ const Products = () => {
         )}
 
         {/* Products Grid */}
-        {filteredProducts.length > 0 && (
+        {sortedProducts.length > 0 && (
           <ProductGrid 
-            products={filteredProducts}
+            products={sortedProducts}
             selectedCategory={selectedCategory}
             showPagination={true}
           />

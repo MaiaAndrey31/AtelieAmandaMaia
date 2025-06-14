@@ -3,6 +3,8 @@ import ProductCard from '../ProductCard/ProductCard';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './ProductGrid.css';
 
+
+
 const ProductGrid = ({ 
   products = [], 
   selectedCategory = 'all',
@@ -18,24 +20,19 @@ const ProductGrid = ({
 
   // Filtrar e ordenar produtos
   const filteredAndSortedProducts = useMemo(() => {
-    let filtered = products;
+    // A filtragem por categoria já foi feita no hook useProducts
+    // Apenas aplicamos a busca e ordenação aqui
+    let filtered = [...products];
 
-    // Filtrar por categoria
-    if (selectedCategory && selectedCategory !== 'all') {
-      filtered = filtered.filter(product => 
-        product.category === selectedCategory
-      );
-    }
-
-    // Filtrar por busca
+    // Filtrar por busca (se houver)
     if (searchQuery) {
-      const query = searchQuery.toLowerCase();
+      const query = searchQuery.toLowerCase().trim();
       filtered = filtered.filter(product =>
         product.name.toLowerCase().includes(query) ||
         product.description.toLowerCase().includes(query) ||
-        product.features.some(feature => 
+        (product.features && product.features.some(feature => 
           feature.toLowerCase().includes(query)
-        )
+        ))
       );
     }
 
@@ -56,7 +53,7 @@ const ProductGrid = ({
     });
 
     return sortedProducts;
-  }, [products, selectedCategory, searchQuery, sortBy]);
+  }, [products, searchQuery, sortBy]); // Removido selectedCategory das dependências
 
   // Paginação
   const totalPages = Math.ceil(filteredAndSortedProducts.length / itemsPerPage);

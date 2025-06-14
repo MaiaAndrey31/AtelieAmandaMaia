@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Hero from '../../components/Hero/Hero';
 import CategoryFilter from '../../components/CategoryFilter/CategoryFilter';
 import ProductGrid from '../../components/ProductGrid/ProductGrid';
@@ -12,7 +12,7 @@ import './Home.css';
 
 const Home = () => {
   const { products, loading, error } = useProducts();
-  const [selectedCategory, setSelectedCategory] = useState('todos');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   // Rotação automática dos depoimentos
@@ -26,8 +26,17 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Filtrar produtos populares para a home
-  const featuredProducts = products.filter(product => product.isPopular).slice(0, 8);
+  // Filtrar produtos populares para a home, considerando a categoria selecionada
+  const featuredProducts = useMemo(() => {
+    let filtered = products.filter(product => product.isPopular);
+    
+    // Aplicar filtro de categoria se não for 'all'
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(product => product.category === selectedCategory);
+    }
+    
+    return filtered.slice(0, 8);
+  }, [products, selectedCategory]);
 
   const stats = [
     { number: 500, suffix: '+', label: 'Clientes Felizes', icon: '😊' },
