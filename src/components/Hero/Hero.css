@@ -195,10 +195,16 @@
   
   .hero-nav.prev {
     left: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
   
   .hero-nav.next {
     right: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
   
   /* Slide Indicators */

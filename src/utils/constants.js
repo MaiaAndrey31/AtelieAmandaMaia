@@ -1,6 +1,6 @@
 // Informações de contato
 export const CONTACT_INFO = {
-    whatsapp: '5511999999999',
+    whatsapp: '5511975578672',
     instagram: '@atelier_amanda_maia',
     email: 'contato@atelieamandamaia.com.br',
     address: 'São Paulo, SP'

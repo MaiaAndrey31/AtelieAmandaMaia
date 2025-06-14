@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { WHATSAPP_NUMBER } from '../../utils/constants';
+import { ArrowCircleLeftIcon, ArrowCircleRightIcon, HandHeartIcon, StarIcon, TruckIcon } from '@phosphor-icons/react';
 import './Hero.css';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   const slides = [
     {
       title: "Sua festa começa aqui!",
@@ -40,8 +41,7 @@ const Hero = () => {
   const handleCTAClick = (index) => {
     if (index === 1) {
       // Fazer Orçamento - WhatsApp
-      const message = encodeURIComponent('Olá! Gostaria de fazer um orçamento para produtos personalizados.');
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+      window.open(`https://wa.me/5511975578672?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20produtos%20personalizados.`, '_blank');
     } else {
       // Ver Catálogo/Conhecer Produtos - Scroll to products
       const element = document.getElementById('products');
@@ -67,7 +67,7 @@ const Hero = () => {
     <section className="hero" id="home">
       <div className="hero-slider">
         {slides.map((slide, index) => (
-          <div 
+          <div
             key={index}
             className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
             style={{ backgroundImage: `url(${slide.image})` }}
@@ -81,40 +81,33 @@ const Hero = () => {
                 </h1>
                 <h2 className="hero-subtitle">{slide.subtitle}</h2>
                 <p className="hero-description">{slide.description}</p>
-                
+
                 <div className="hero-actions">
-                  <button 
+                  <button
                     className="cta-button primary"
                     onClick={() => handleCTAClick(index)}
                   >
                     {slide.cta}
                     <i className="fas fa-arrow-right"></i>
                   </button>
-                  
-                  <button 
-                    className="cta-button secondary"
-                    onClick={() => {
-                      const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os produtos.');
-                      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
-                    }}
-                  >
-                    <i className="fab fa-whatsapp"></i>
-                    Falar Conosco
-                  </button>
                 </div>
 
                 {/* Features */}
                 <div className="hero-features">
                   <div className="feature">
-                    <i className="fas fa-star"></i>
+                    <StarIcon size={32} color="white" />
+
                     <span>Produtos Exclusivos</span>
                   </div>
                   <div className="feature">
-                    <i className="fas fa-shipping-fast"></i>
+                    <TruckIcon size={32} color="white" />
+
+
                     <span>Entrega Rápida</span>
                   </div>
                   <div className="feature">
-                    <i className="fas fa-heart"></i>
+                    <HandHeartIcon size={32} color="white" />
+
                     <span>Feito com Amor</span>
                   </div>
                 </div>
@@ -126,10 +119,14 @@ const Hero = () => {
 
       {/* Navigation Controls */}
       <button className="hero-nav prev" onClick={prevSlide}>
-        <i className="fas fa-chevron-left"></i>
+        <ArrowCircleLeftIcon size={40} />
+
+
       </button>
       <button className="hero-nav next" onClick={nextSlide}>
-        <i className="fas fa-chevron-right"></i>
+        <ArrowCircleRightIcon size={40} />
+
+
       </button>
 
       {/* Slide Indicators */}
