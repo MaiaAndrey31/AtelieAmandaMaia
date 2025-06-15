@@ -18,7 +18,7 @@ const Home = () => {
   // Rotação automática dos depoimentos
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => 
+      setCurrentTestimonial((prev) =>
         prev === testimonials.length - 1 ? 0 : prev + 1
       );
     }, 5000);
@@ -29,12 +29,12 @@ const Home = () => {
   // Filtrar produtos populares para a home, considerando a categoria selecionada
   const featuredProducts = useMemo(() => {
     let filtered = products.filter(product => product.isPopular);
-    
+
     // Aplicar filtro de categoria se não for 'all'
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(product => product.category === selectedCategory);
     }
-    
+
     return filtered.slice(0, 8);
   }, [products, selectedCategory]);
 
@@ -88,14 +88,14 @@ const Home = () => {
             <div className="about-text">
               <h2>Sobre o Ateliê Amanda Maia</h2>
               <p>
-                Com mais de 12 anos de experiência, nosso ateliê se dedica a criar 
-                produtos únicos e personalizados para tornar sua festa ainda mais especial. 
-                Cada peça é cuidadosamente desenvolvida com amor e atenção aos detalhes.
+                Há mais de 12 anos, me dedico a transformar sonhos em peças únicas e personalizadas. Cada criação que sai do meu ateliê carrega cuidado, amor e atenção aos mínimos detalhes.
+              
+                Eu não vendo apenas produtos. Eu entrego memórias afetivas que fazem parte de momentos especiais na vida das pessoas.
+              
+                Sou especialista em velas personalizadas, topos de bolo, lembrancinhas e outras peças que deixam qualquer celebração ainda mais marcante.
               </p>
               <p>
-                Especializamos em velas personalizadas, topos de bolo, lembrancinhas 
-                e muito mais. Nossa missão é transformar seus sonhos em realidade, 
-                criando memórias que durarão para sempre.
+                Minha missão é simples, mas poderosa: criar com o coração para que você viva momentos inesquecíveis. Aqui, cada pedido é tratado com exclusividade, respeito e o compromisso de entregar algo que realmente faça sentido para você.
               </p>
               <div className="about-features">
                 <div className="feature">
@@ -114,11 +114,11 @@ const Home = () => {
             </div>
             <div className="about-image">
               <div className="image-container">
-                <img 
-                  src={Atelie} 
-                  alt="Ateliê Amanda Maia" 
+                <img
+                  src={Atelie}
+                  alt="Ateliê Amanda Maia"
                   className="about-image-content"
-                  
+
                 />
               </div>
             </div>
@@ -134,7 +134,7 @@ const Home = () => {
             <p>Conheça alguns dos nossos produtos mais populares</p>
           </div>
 
-          <CategoryFilter 
+          <CategoryFilter
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}
           />
@@ -149,7 +149,7 @@ const Home = () => {
               <p>Erro ao carregar produtos: {error}</p>
             </div>
           ) : (
-            <ProductGrid 
+            <ProductGrid
               products={featuredProducts}
               selectedCategory={selectedCategory}
               showPagination={false}

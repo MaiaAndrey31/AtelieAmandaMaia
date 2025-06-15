@@ -9,7 +9,7 @@ export const CONTACT_INFO = {
   // URLs das redes sociais
   export const SOCIAL_LINKS = {
     whatsapp: `https://wa.me/${CONTACT_INFO.whatsapp}`,
-    instagram: 'https://instagram.com/atelier_amanda_maia',
+    instagram: 'https://www.instagram.com/atelie_amandamaia/',
     email: `mailto:${CONTACT_INFO.email}`
   };
   
@@ -36,12 +36,12 @@ export const CONTACT_INFO = {
   
   // Tempo de produção (em dias)
   export const PRODUCTION_TIME = {
-    velas: 3,
-    topos: 2,
-    lembrancinhas: 5,
-    familia: 7,
+    velas: 7,
+    topos: 10,
+    lembrancinhas: 15,
+    familia: 10,
     funko: 10,
-    chaveiros: 3
+    chaveiros: 10
   };
   
   // Mensagens padrão para WhatsApp
